@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить рецепт</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/form.js"></script>
+  </head>
+  <body>
+    <main class="container">
+      <div class="content">
+        <h1>Добавить рецепт</h1>
+        <form class="form">
+          <div>
+            <label for="title">Название</label>
+            <input class="form__field" id="title" type="text" name="title" required>
+          </div>
+          <div>
+            <label for="remark">Примечание</label>
+            <input class="form__field" id="remark" type="text" name="remark">
+          </div>
+          <div>
+            <label for="ingredients">Ингредиенты</label>
+            <textarea class="form__field" id="ingredients" name="ingredients" cols="30" rows="10" required></textarea>
+          </div>
+          <div>
+            <label for="cooking">Приготовление</label>
+            <textarea class="form__field" id="cooking" name="cooking" cols="30" rows="10" required></textarea>
+          </div>
+          <div class="actions form__actions">
+            <button class="button" type="submit">Сохранить</button>
+            <button class="button" id="reset-button" type="reset">Очистить</button><a class="button" href="/">Закрыть</a>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

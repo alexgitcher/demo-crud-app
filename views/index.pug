@@ -1,0 +1,45 @@
+-
+  const { items } = locals
+
+doctype html
+html(lang='ru')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+
+    title Рецепты
+
+    link(rel='stylesheet' href='/styles.css')
+    script(src='/script.js')
+
+  body
+    main.container
+      .content
+        h1 Рецепты
+        unless Object.keys(items).length === 0
+          nav.navigation
+            ul
+              each item in items
+                li
+                  a(href=`#${item.id}`)= item.title
+
+        a(href='/add/' class='button') Добавить
+
+        .content__body
+          each item in items
+            article(id=item.id)
+              h2= `${item.id}. ${item.title}`
+
+              if (item.remark)
+                p= item.remark
+
+              ul
+                each ingredient in item.ingredients
+                  li= ingredient
+
+              p= item.cooking
+              .actions.article__actions
+                a(href=`/edit/${item.id}/` class='button') Редактировать
+                button(type='button' class='button button_type_delete') Удалить
+
+

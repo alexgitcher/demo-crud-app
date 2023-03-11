@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "scripts": {
+    "watch": "node ./node_modules/.bin/pug --pretty --watch ./views/index.pug -o ./build",
+    "build": "node ./node_modules/.bin/pug --pretty ./views/index.pug -o ./build",
+    "start": "cross-env NODE_ENV=production node app.js",
+    "dev": "cross-env NODE_ENV=development nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "config": "3.3.9",
+    "express": "4.18.2"
+  },
+  "devDependencies": {
+    "cross-env": "7.0.3",
+    "nodemon": "2.0.20",
+    "pug": "3.0.2",
+    "pug-cli": "1.0.0-alpha6"
+  }
+}

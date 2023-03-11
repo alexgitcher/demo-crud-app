@@ -1,0 +1,37 @@
+-
+  const { chapter } = locals
+
+doctype html
+html(lang='ru')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+
+    title Редактировать рецепт
+
+    link(rel='stylesheet' href='/styles.css')
+    script(src='/form.js')
+
+  body
+    main.container
+      .content
+        h1 Редактировать рецепт
+        form.form
+          input(type='hidden' name='createdAt' value=chapter.createdAt)
+          div
+            label(for='title') Название
+            input(class='form__field' id='title' type='text' name='title' value=chapter.title required)
+          div
+            label(for='remark') Примечание
+            input(class='form__field' id='remark' type='text' name='remark' value=chapter.remark)
+          div
+            label(for='ingredients') Ингредиенты
+            textarea(class='form__field' id='ingredients' name='ingredients' cols='30' rows='10' required)= chapter.ingredients
+          div
+            label(for='cooking') Приготовление
+            textarea(class='form__field' id='cooking' name='cooking' cols='30' rows='10' required)= chapter.cooking
+          .actions.form__actions
+            button(type='submit' class='button') Сохранить
+            a(href='/' class='button') Закрыть
+
+
