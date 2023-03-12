@@ -1,0 +1,23 @@
+mixin form(item)
+  form.form
+    unless !item
+      input(type='hidden' name='createdAt' value=item && item.createdAt)
+    div
+      label(for='title') Название
+      input(class='form__field' id='title' type='text' name='title' value=item && item.title required)
+    div
+      label(for='remark') Примечание
+      input(class='form__field' id='remark' type='text' name='remark' value=item && item.remark)
+    div
+      label(for='ingredients') Ингредиенты
+      textarea(class='form__field' id='ingredients' name='ingredients' cols='30' rows='10' required)= item && item.ingredients
+    div
+      label(for='cooking') Приготовление
+      textarea(class='form__field' id='cooking' name='cooking' cols='30' rows='10' required)= item && item.cooking
+    .actions.form__actions
+      button(type='submit' class='button') Сохранить
+      unless item
+        button(id='reset-button' type='reset' class='button') Очистить
+      a(href='/' class='button') Закрыть
+
+

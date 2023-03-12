@@ -1,3 +1,5 @@
+include ../mixins/form.mixin.pug
+
 doctype html
 html(lang='ru')
   head
@@ -13,22 +15,6 @@ html(lang='ru')
     main.container
       .content
         h1 Добавить рецепт
-        form.form
-          div
-            label(for='title') Название
-            input(class='form__field' id='title' type='text' name='title' required)
-          div
-            label(for='remark') Примечание
-            input(class='form__field' id='remark' type='text' name='remark')
-          div
-            label(for='ingredients') Ингредиенты
-            textarea(class='form__field' id='ingredients' name='ingredients' cols='30' rows='10' required)
-          div
-            label(for='cooking') Приготовление
-            textarea(class='form__field' id='cooking' name='cooking' cols='30' rows='10' required)
-          .actions.form__actions
-            button(type='submit' class='button') Сохранить
-            button(id='reset-button' type='reset' class='button') Очистить
-            a(href='/' class='button') Закрыть
+        +form
 
 

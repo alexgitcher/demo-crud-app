@@ -52,9 +52,9 @@ app.post('/add', async (request, response) => {
 app.get('/edit/:id', async (request, response) => {
   const { id } = request.params;
 
-  const chapter = await getItem(id);
+  const item = await getItem(id);
 
-  response.render('edit', { chapter });
+  response.render('edit', { item });
 });
 
 app.post('/edit', async (request, response) => {
